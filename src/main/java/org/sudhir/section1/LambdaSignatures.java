@@ -28,9 +28,15 @@ public class LambdaSignatures {
         return a + b;
     };
 
+    GenericFunctional<String , Integer> gf1 = s -> s.length();
+    GenericFunctional<String, String>   gf2 = s -> s.substring(0,1);
+
     fun1.myMethod();
     fun2.method(2,3);
-        func3.operation(3,4);
-        func4.operation(5,6);
+    func3.operation(3,4);
+    func4.operation(5,6);
+    System.out.println("Length:"+ gf1.process("Hello"));
+    System.out.println("SubString:"+ gf2.process("Hello"));
     }
+
 }
